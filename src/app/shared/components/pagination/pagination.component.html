@@ -1,0 +1,21 @@
+<div class="pagination">
+  <div class="block-1">
+    Showing {{ currentPage }} of {{ totalPages }} ({{ totalItems }} entries)
+  </div>
+
+  <div class="block-2">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">&lt;</button>
+
+    <ng-container *ngFor="let page of getPages()">
+      <button
+        (click)="goToPage(page)"
+        [class.active]="currentPage === page"
+        class="page-btn"
+      >
+        {{ page }}
+      </button>
+    </ng-container>
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">&gt;</button>
+  </div>
+</div>

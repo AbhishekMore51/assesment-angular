@@ -1,0 +1,23 @@
+<div class="filter-main">
+  <div class="filter-sec search-sec">
+    <input
+      type="search"
+      placeholder="Search"
+      [(ngModel)]="searchText"
+      (input)="onSearchChange()"
+    />
+    <img src="images/icons/Path 159.svg" alt="Search" />
+  </div>
+
+  <div class="filter-sec icon-sec">
+    <img src="images/icons/Group 701.svg" alt="Filter" (click)="onFilterClick()"/>
+  </div>
+
+  <div class="filter-sec icon-sec">
+    <img src="images/icons/Group 2582.svg" alt="Documents" (click)="onDocumentsClick()"/>
+  </div>
+
+  <div class="filter-sec">
+    <button class="add-btn" (click)="onAddClick()">Add</button>
+  </div>
+</div>

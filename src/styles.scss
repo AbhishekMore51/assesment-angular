@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri'),
+       url('/assets/fonts/Calibri.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  --font-primary: 'Nunito', sans-serif;
+  --font-secondary: 'Calibri', sans-serif;
+
+  --color-white: #FFFFFF;
+  --color-bg: #F8F8F8;
+  --color-border: #00000029;
+  --color-border-light: #EAEAEA;
+  --color-placeholder: #B4B4B4;
+  --color-primary-color: #053C6D;
+  --color-text: #212121;
+  --color-status-green: #36BC9B;
+  --color-status-red: #DB4453;
+  --color-status-yellow: #FBAD17;
+  --color-status-blue: #4B89DC;
+  --color-pagination-chart: #5F5F5F;
+  --color-table-header: #E8E8E8;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background: var(--color-bg);
+  color: var(--color-text);
+  max-width: 1600px;
+  margin: 0 auto;
+}

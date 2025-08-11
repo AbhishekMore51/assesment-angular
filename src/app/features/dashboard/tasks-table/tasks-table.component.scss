@@ -1,0 +1,166 @@
+.content-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 50px;
+
+  h3 {
+    font-family: var(--font-primary);
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--color-primary-color);
+    line-height: 30px;
+    margin-bottom: 25px;
+  }
+}
+
+.table-block {
+  margin-right: 50px;
+}
+.tasks-table {
+  width: 100%;
+  border-collapse: separate;
+  border: 1px solid var(--color-border-light);
+  background: var(--color-white);
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 15px;
+}
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-light);
+}
+th {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--color-text);
+  line-height: 16px;
+}
+td {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 19px;
+}
+thead {
+  background: var(--color-white);
+}
+.Completed {
+  color: var(--color-status-green);
+  font-weight: bold;
+}
+.Pending {
+  color: var(--color-status-red);
+  font-weight: bold;
+}
+.WIP {
+  color: var(--color-status-yellow);
+  font-weight: bold;
+}
+.Rescheduled {
+  color: var(--color-primary-color);
+  font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-right: 50px;
+
+  .block-2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px 10px;
+      font-size: 18px;
+
+      &.page-btn {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: #eee;
+        }
+
+        &.active {
+          background-color: var(--color-primary-color);
+          color: white;
+          border-color: var(--color-primary-color);
+        }
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.pagination button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--color-border-light);
+  background: var(--color-white);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button.active {
+  background: var(--color-primary);
+  color: white;
+}
+
+//
+@media (max-width: 600px) {
+  .tasks-table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #fff;
+  }
+
+  td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #555;
+  }
+}

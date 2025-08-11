@@ -1,0 +1,33 @@
+.layout {
+  min-height: 100vh;
+  background: #f8f8f8;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 30px;
+}
+
+h3 {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--color-primary-color);
+  line-height: 30px;
+  margin-bottom: 25px;
+}
+
+.charts-section {
+  width: 330px;
+}
+
+@media (max-width: 1265px) {
+  .main {
+    grid-template-columns: auto auto auto;
+    overflow: hidden;
+  }
+  .charts-section {
+    width: 280px;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="task-status-card">
+  <div class="header">
+    <h3>Tasks Status</h3>
+    <select [(ngModel)]="selectedRange" (change)="onRangeChange()">
+      <option value="day">Day</option>
+      <option value="week">Week</option>
+      <option value="month">Month</option>
+    </select>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item open"></span> Open
+    <span class="legend-item closed"></span> Closed
+  </div>
+
+  <div echarts [options]="chartOptions" class="chart"></div>
+
+  <div class="footer">
+    <button class="arrow-btn" (click)="prevDate()">&lt;</button>
+    <span class="date">{{ currentDate }}</span>
+    <button class="arrow-btn" (click)="nextDate()">&gt;</button>
+  </div>
+</div>

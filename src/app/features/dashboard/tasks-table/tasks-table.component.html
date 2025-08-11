@@ -1,0 +1,46 @@
+<div class="content-block">
+  <h3>125 Tasks</h3>
+  <app-filter
+    (searchChange)="onSearchChange($event)"
+    (filterClick)="onFilterClick()"
+    (documentsClick)="onDocumentsClick()"
+    (addClick)="onAddClick()"
+  ></app-filter>
+</div>
+
+<div class="table-block">
+  <table class="tasks-table">
+    <thead>
+      <tr>
+        <th>Task ID</th>
+        <th>Customer Name</th>
+        <th>Gender</th>
+        <th>Mobile No</th>
+        <th>WhatsApp No</th>
+        <th>Email ID</th>
+        <th>Preferred Language</th>
+        <th>Preferred Time</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.id }}</td>
+        <td>{{ task.name }}</td>
+        <td>{{ task.gender }}</td>
+        <td>{{ task.mobile }}</td>
+        <td>{{ task.whatsapp }}</td>
+        <td>{{ task.email }}</td>
+        <td>{{ task.language }}</td>
+        <td>{{ task.time }}</td>
+        <td [class]="task.status">{{ task.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-pagination
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+  [totalItems]="tasks.length"
+  (pageChange)="onPageChange($event)"
+></app-pagination>
